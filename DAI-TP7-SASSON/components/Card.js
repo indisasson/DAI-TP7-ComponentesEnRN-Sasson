@@ -9,7 +9,8 @@ export default function Card() {
     const [colorBoton, setColorBoton] = useState("#BBD2EC") // pasar el use state a uno de los botones para que funcione la function del pressable
     
     function CambiarFondoBoton(){
-      setColorBoton ("red")
+      if(colorBoton == "#BBD2EC") setColorBoton ("red")
+      else setColorBoton ("#BBD2EC")
     }
 
     return(

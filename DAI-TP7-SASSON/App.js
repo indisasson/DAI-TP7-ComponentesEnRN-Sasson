@@ -3,12 +3,12 @@ import { StyleSheet, Text, View, ImageBackground, SafeAreaView } from 'react-nat
 import Card from './components/Card';
 
 
-const imgaFondo =  {uri: 'https://as1.ftcdn.net/jpg/03/56/11/44/1000_F_356114402_KnAV2au0F2RnBTlTweaEus3royONjGAt.jpg'}
+const imgaFondo =  require('./assets/fotoFondo.jpg');
 
 export default function App() {
   return (
     <SafeAreaView style={{flex:1}}>
-        <ImageBackground source={imgaFondo} resizeMode='center' style={styles.ImagenFondo}> 
+        <ImageBackground source={imgaFondo} resizeMode='cover' style={styles.ImagenFondo}> 
         <View style={styles.container}>
           <Card/>
         </View>  
@@ -22,7 +22,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#D3D3D3',
     alignItems: 'center',
     justifyContent: 'center',
   },
