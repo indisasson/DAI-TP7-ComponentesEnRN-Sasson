@@ -7,6 +7,10 @@ const imga =  {uri: 'https://img.europapress.es/fotoweb/fotonoticia_201503311349
 
 export default function Card() {
     const [colorBoton, setColorBoton] = useState("#BBD2EC") // pasar el use state a uno de los botones para que funcione la function del pressable
+    
+    function CambiarFondoBoton(){
+      setColorBoton ("red")
+    }
 
     return(
         <>
@@ -17,16 +21,22 @@ export default function Card() {
                 <TouchableOpacity style={style.boton}><Text style={style.textoBoton}>Contactar</Text></TouchableOpacity>
                 <TouchableOpacity style={style.boton2}><Text style={style.textoBoton2}>Ver Portfolio</Text></TouchableOpacity>
                 <TextInput value="  Escribi algo" keyboardType='number-pad' style={style.Input}/>
-                <Pressable onPressIn={CambiarFondoBoton()} style={style.boton3}><Text>Ver Perfil</Text></Pressable>
+                <Pressable onPressIn={CambiarFondoBoton} 
+                style={{ 
+                  backgroundColor: colorBoton,
+                  width: 110,
+                  height: "auto",
+                  textAlign: "center",
+                  padding: 3,
+                  borderRadius: 8,
+                  marginLeft: 60,
+                  marginTop: 10
+                }}><Text>Ver Perfil</Text></Pressable>
                 
             </View>
         </>
     )
 };
-
-function CambiarFondoBoton(){
-    setColorBoton ("red")
-}
 
 const style = StyleSheet.create({
     contenedor: {
@@ -77,16 +87,6 @@ const style = StyleSheet.create({
       Input:{
         backgroundColor: "white",
         borderRadius: 10,
-        marginTop: 10
-      },
-      boton3: {
-        width: 110,
-        height: "auto",
-        backgroundColor: "#BBD2EC",
-        textAlign: "center",
-        padding: 3,
-        borderRadius: 8,
-        marginLeft: 60,
         marginTop: 10
       }
   });

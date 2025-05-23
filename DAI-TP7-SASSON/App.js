@@ -8,7 +8,7 @@ const imgaFondo =  {uri: 'https://as1.ftcdn.net/jpg/03/56/11/44/1000_F_356114402
 export default function App() {
   return (
     <SafeAreaView style={{flex:1}}>
-        <ImageBackground source={imgaFondo}  resizeMode='center' style={styles.ImagenFondo}> 
+        <ImageBackground source={imgaFondo} resizeMode='center' style={styles.ImagenFondo}> 
         <View style={styles.container}>
           <Card/>
         </View>  
